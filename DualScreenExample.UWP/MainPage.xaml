@@ -12,8 +12,8 @@
                  Pane1Length="1*"
                  Pane2Length="1*"
                  PanePriority="Pane1"
-                 MinTallModeHeight="450"
-                 MinWideModeWidth="550"
+                 MinTallModeHeight="1550"
+                 MinWideModeWidth="1550"
                  TallModeConfiguration="TopBottom"
                  WideModeConfiguration="LeftRight">
         <TwoPaneView.Pane1>

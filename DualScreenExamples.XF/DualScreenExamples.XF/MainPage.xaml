@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:dualScreen="clr-namespace:Xamarin.Forms.DualScreen;assembly=Xamarin.Forms.DualScreen" xmlns:views="clr-namespace:DualScreenExamples.XF"
+             mc:Ignorable="d"
+             x:Class="DualScreenExamples.XF.MainPage">
+
+    <ContentPage.Content>
+        <dualScreen:TwoPaneView MinWideModeWidth="1000"
+                            TallModeConfiguration="SinglePane">
+            <dualScreen:TwoPaneView.Pane1>
+                <Grid>
+                    <ListView x:Name="listView">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <TextCell Text="{Binding Name}" />
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Grid>
+            </dualScreen:TwoPaneView.Pane1>
+            <dualScreen:TwoPaneView.Pane2>
+                <views:DetailsView x:Name="detailsPage"></views:DetailsView>
+            </dualScreen:TwoPaneView.Pane2>
+        </dualScreen:TwoPaneView>
+    </ContentPage.Content>
+
+</ContentPage>
