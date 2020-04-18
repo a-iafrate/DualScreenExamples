@@ -12,9 +12,10 @@ namespace DualScreenExamples.XF
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class DetailsPage : ContentPage
     {
-        public DetailsPage()
+        public DetailsPage(Item item)
         {
             InitializeComponent();
+            detail.load(item);
         }
     }
 }

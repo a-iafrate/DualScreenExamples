@@ -4,15 +4,16 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:dualScreen="clr-namespace:Xamarin.Forms.DualScreen;assembly=Xamarin.Forms.DualScreen" xmlns:views="clr-namespace:DualScreenExamples.XF"
              mc:Ignorable="d"
-             x:Class="DualScreenExamples.XF.MainPage">
+             x:Class="DualScreenExamples.XF.MainPage"
+             Title="Dual screen examples">
 
     <ContentPage.Content>
         <dualScreen:TwoPaneView MinWideModeWidth="1000"
-                            TallModeConfiguration="SinglePane">
+                            TallModeConfiguration="SinglePane" x:Name="twoPaneView">
             <dualScreen:TwoPaneView.Pane1>
                 <Grid >
                     
-                    <ListView x:Name="listView" BackgroundColor="Green">
+                    <ListView x:Name="listView" BackgroundColor="Green" ItemSelected="listView_ItemSelected">
                         <ListView.ItemTemplate>
                             <DataTemplate>
 

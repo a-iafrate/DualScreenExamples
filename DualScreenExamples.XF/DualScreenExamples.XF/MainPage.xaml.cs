@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using Xamarin.Forms.DualScreen;
 
 namespace DualScreenExamples.XF
 {
@@ -19,15 +20,28 @@ namespace DualScreenExamples.XF
         {
             InitializeComponent();
 
-            items.Add(new Item("Item 1", "bla bla bla bla bla"));
-            items.Add(new Item("Item 2", "bla bla bla bla bla"));
-            items.Add(new Item("Item 3", "bla bla bla bla bla"));
-            items.Add(new Item("Item 4", "bla bla bla bla bla"));
-            items.Add(new Item("Item 5", "bla bla bla bla bla"));
-            items.Add(new Item("Item 6", "bla bla bla bla bla"));
-            items.Add(new Item("Item 7", "bla bla bla bla bla"));
+            items.Add(new Item("Item 1", "Description 1"));
+            items.Add(new Item("Item 2", "Description 2"));
+            items.Add(new Item("Item 3", "Description 3"));
+            items.Add(new Item("Item 4", "Description 4"));
+            items.Add(new Item("Item 5", "Description 5"));
+            items.Add(new Item("Item 6", "Description 6"));
+            items.Add(new Item("Item 7", "Description 7"));
 
             listView.ItemsSource = items;
+        }
+
+        private void listView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            Item item = (Item)e.SelectedItem;
+            if (twoPaneView.Mode!=TwoPaneViewMode.SinglePane)
+            {
+                detailsPage.load(item);
+            }
+            else
+            {
+                Navigation.PushAsync(new DetailsPage(item));
+            }
         }
     }
 }

@@ -7,7 +7,7 @@
              x:Class="DualScreenExamples.XF.DetailsView">
   <ContentView.Content>
       <StackLayout>
-          <Label Text="Hello Xamarin.Forms!" />
+          <Label x:Name="labelDescription" />
       </StackLayout>
   </ContentView.Content>
 </ContentView>

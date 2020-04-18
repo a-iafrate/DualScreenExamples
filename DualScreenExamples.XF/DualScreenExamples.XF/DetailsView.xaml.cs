@@ -15,12 +15,12 @@ namespace DualScreenExamples.XF
         public DetailsView()
         {
             InitializeComponent();
-            load();
+           
         }
 
-        public void load()
+        public void load(Item item)
         {
-
+            labelDescription.Text = item.Description;
         }
     }
 }
