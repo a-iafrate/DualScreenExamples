@@ -27,7 +27,7 @@ namespace DualScreenExamples.XF
             items.Add(new Item("Item 6", "bla bla bla bla bla"));
             items.Add(new Item("Item 7", "bla bla bla bla bla"));
 
-            listView.BindingContext = items;
+            listView.ItemsSource = items;
         }
     }
 }

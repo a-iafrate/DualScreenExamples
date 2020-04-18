@@ -10,14 +10,20 @@
         <dualScreen:TwoPaneView MinWideModeWidth="1000"
                             TallModeConfiguration="SinglePane">
             <dualScreen:TwoPaneView.Pane1>
-                <Grid>
-                    <ListView x:Name="listView">
+                <Grid >
+                    
+                    <ListView x:Name="listView" BackgroundColor="Green">
                         <ListView.ItemTemplate>
                             <DataTemplate>
-                                <TextCell Text="{Binding Name}" />
+
+                                <ViewCell>
+                                    <Grid>
+                                    <Label Text="{Binding Name}"></Label></Grid>
+                                </ViewCell>
                             </DataTemplate>
                         </ListView.ItemTemplate>
                     </ListView>
+                   
                 </Grid>
             </dualScreen:TwoPaneView.Pane1>
             <dualScreen:TwoPaneView.Pane2>
