@@ -9,7 +9,8 @@
 
     <ContentPage.Content>
         <dualScreen:TwoPaneView MinWideModeWidth="1000"
-                            TallModeConfiguration="SinglePane" x:Name="twoPaneView">
+                                MinTallModeHeight="1000"
+                            TallModeConfiguration="TopBottom" x:Name="twoPaneView">
             <dualScreen:TwoPaneView.Pane1>
                 <Grid >
                     

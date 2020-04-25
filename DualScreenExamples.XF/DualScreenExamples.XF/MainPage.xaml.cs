@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +16,7 @@ namespace DualScreenExamples.XF
     public partial class MainPage : ContentPage
     {
         public List<Item> items = new List<Item>();
+        DualScreenInfo currentWindows = DualScreenInfo.Current;
 
         public MainPage()
         {
@@ -29,6 +31,22 @@ namespace DualScreenExamples.XF
             items.Add(new Item("Item 7", "Description 7"));
 
             listView.ItemsSource = items;
+            currentWindows.PropertyChanged += CurrentWindows_PropertyChanged;
+        }
+
+        private void CurrentWindows_PropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            Debug.WriteLine(String.Format($"SpanMode: {currentWindows.SpanMode}"));
+            Debug.WriteLine(String.Format($"Panels count: {currentWindows.SpanningBounds.Length}"));
+            if (currentWindows.SpanningBounds.Length > 0)
+            {
+                Debug.WriteLine(String.Format($"Panel2: {currentWindows.SpanningBounds[0].Width}"));
+                Debug.WriteLine(String.Format($"Panel2: {currentWindows.HingeBounds.Width}"));
+            }
+            if (currentWindows.SpanningBounds.Length > 1)
+            {
+                Debug.WriteLine(String.Format($"Panel2: {currentWindows.SpanningBounds[1].Width}"));
+            }
         }
 
         private void listView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
